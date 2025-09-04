@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  minecraft:
+    build: .
+    container_name: minecraft
+    restart: unless-stopped
+    ports:
+      - "25565:25565"          # Fixed host port
+    volumes:
+      - ./data:/app            # Persist world and configs
+    environment:
+      MC_JAR_URL: ""           # Paste direct server JAR URL here
+      JAVA_OPTS: "-Xms1G -Xmx4G"
