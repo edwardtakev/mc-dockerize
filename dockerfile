@@ -1,15 +1,14 @@
-# Base image with latest LTS JDK
 FROM eclipse-temurin:21-jdk
 
-# Set working directory
 WORKDIR /app
 
-# Copy entrypoint script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# wget to download the JAR dynamically
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
-# Expose Minecraft default port
+# Default JAR file name
+ENV MC_JAR=server.jar
+
+# Auto-accept the EULA
+RUN echo "eula=true" > /app/eula.txt
+
 EXPOSE 25565
-
-# Run the entrypoint script
-ENTRYPOINT ["/start.sh"]
