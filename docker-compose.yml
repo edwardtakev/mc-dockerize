@@ -1,6 +1,6 @@
 services:
   minecraft:
-    build: .
+    image: ghcr.io/edwardtakev/mcvanilla:latest
     container_name: minecraft
     restart: unless-stopped
     ports:
@@ -8,16 +8,7 @@ services:
     volumes:
       - ./data:/app
     environment:
-      # Provide the JAR download link
-      MC_JAR_URL: "https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/132/downloads/paper-1.21.1-132.jar"
+      MC_JAR_URL: "https://fill-data.papermc.io/v1/objects/8de7c52c3b02403503d16fac58003f1efef7dd7a0256786843927fa92ee57f1e/paper-1.21.8-60.jar"
       MC_JAR: "server.jar"
-      JAVA_OPTS: "-Xms1G -Xmx4G"
+      JAVA_OPTS: "-Xms2G -Xmx4G"
       MC_ARGS: "nogui"
-    command: >
-      sh -c "
-        if [ ! -f /app/$MC_JAR ]; then
-          echo 'Downloading server jar...';
-          wget -O /app/$MC_JAR $MC_JAR_URL;
-        fi &&
-        java $JAVA_OPTS -jar /app/$MC_JAR $MC_ARGS
-      "
