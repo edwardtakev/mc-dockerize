@@ -1,6 +1,6 @@
 services:
   minecraft:
-    image: ghcr.io/edwardtakev/mcvanilla:latest
+    image: ghcr.io/edwardtakev/mc-docker:latest
     container_name: minecraft
     restart: unless-stopped
     ports:
