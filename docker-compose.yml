@@ -8,9 +8,14 @@ services:
     volumes:
       - /mnt/media/docker/minecraft:/app
     environment:
-      # The URL where the server JAR will be downloaded from
-      MC_JAR_URL: "https://fill-data.papermc.io/v1/objects/8de7c52c3b02403503d16fac58003f1efef7dd7a0256786843927fa92ee57f1e/paper-1.21.8-60.jar"
-      # The name the jar file will be saved as upon downloading 
-      MC_JAR: "server.jar"
-      # Memory allocation: -Xms2G → minimum heap = 2GB | -Xmx4G → maximum heap = 4GB
+      # Server type: default (Vanilla/Paper) or curseforge
+      SERVER_TYPE: "default"
+
+      # URL to download server: JAR for Vanilla/Paper, zip for CurseForge
+      MC_SERVER_URL: "https://papermc.io/api/v2/projects/paper/versions/1.21.8/builds/60/downloads/paper-1.21.8-60.jar"
+
+      # Main server file inside /app: JAR for Vanilla/Paper, can be ignored for CurseForge
+      MC_SERVER_MAIN: "server.jar"
+
+      # Java memory allocation
       JAVA_OPTS: "-Xms2G -Xmx4G"
