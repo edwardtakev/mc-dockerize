@@ -18,14 +18,14 @@ RUN apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists
 ENTRYPOINT ["sh", "-c", "\
 if [ \"$SERVER_TYPE\" = \"curseforge\" ]; then \
     echo 'CurseForge server mode'; \
-    if [ ! -f /app/start.sh ]; then \
+    if [ ! -f /app/startserver.sh ]; then \
         echo 'Downloading CurseForge modpack from $MC_SERVER_URL...'; \
         wget -O /app/pack.zip $MC_SERVER_URL; \
         unzip /app/pack.zip -d /app; \
         rm /app/pack.zip; \
-        chmod +x /app/start.sh; \
+        chmod +x /app/startserver.sh; \
     fi; \
-    exec /app/start.sh; \
+    exec /app/startserver.sh\
 else \
     if [ ! -f \"/app/$MC_SERVER_MAIN\" ]; then \
         echo 'Downloading server jar from $MC_SERVER_URL...'; \
