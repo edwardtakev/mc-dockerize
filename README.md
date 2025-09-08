@@ -65,7 +65,7 @@ docker run -d \
   -p 25565:25565 \
   -v $(pwd)/data:/app \
   -e SERVER_TYPE="default" \
-  -e MC_SERVER_URL="https://papermc.io/api/v2/projects/paper/versions/1.21.8/builds/60/downloads/paper-1.21.8-60.jar" \
+  -e MC_SERVER_URL="https://fill-data.papermc.io/v1/objects/8de7c52c3b02403503d16fac58003f1efef7dd7a0256786843927fa92ee57f1e/paper-1.21.8-60.jar" \
   -e MC_SERVER_MAIN="server.jar" \
   -e JAVA_OPTS="-Xms2G -Xmx4G" \
   ghcr.io/edwardtakev/mc-docker:latest
