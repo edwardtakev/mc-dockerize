@@ -19,6 +19,5 @@ Automatically downloads the server JAR on first start and runs with your chosen 
 | `MC_JAR`      | `server.jar` | Name of the JAR file inside `/app` |
 | `MC_JAR_URL`  | *(required)* | URL to download the server JAR |
 | `JAVA_OPTS`   | `-Xmx2G -Xms1G` | Java memory/flags |
-| `MC_ARGS`     | `nogui` | Extra Minecraft server arguments |
 
 ---
