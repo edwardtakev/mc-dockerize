@@ -17,5 +17,5 @@ services:
       # Main server file inside /app: JAR for Vanilla/Paper, can be ignored for CurseForge
       MC_SERVER_MAIN: "server.jar"
 
-      # Java memory allocation
+      # Java memory allocation (ignored for CurseForge)
       JAVA_OPTS: "-Xms2G -Xmx4G"

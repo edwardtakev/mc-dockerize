@@ -52,7 +52,7 @@ services:
       # Main server file inside /app (ignored for CurseForge)
       MC_SERVER_MAIN: "server.jar"
 
-      # Memory allocation
+      # Memory allocation (ignored for CurseForge)
       JAVA_OPTS: "-Xms2G -Xmx4G"
 ```
 
